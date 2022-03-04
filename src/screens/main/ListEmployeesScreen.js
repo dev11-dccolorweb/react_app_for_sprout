@@ -39,6 +39,7 @@ export default function ListEmployeesScreen() {
 
     return (
         <SafeAreaView>
+
             {
                 isLoading ? <ActivityIndicator/> : dataIsLoaded ?
                    <EmployeeCard employees={employees}/>
