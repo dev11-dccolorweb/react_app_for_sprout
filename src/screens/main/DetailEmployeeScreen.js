@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React from "react";
 import {Card, Paragraph, Title, Avatar, Text, ActivityIndicator} from "react-native-paper";
 import {useIsFocused} from "@react-navigation/native";
 

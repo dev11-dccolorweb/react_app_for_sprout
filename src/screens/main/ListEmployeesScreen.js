@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import {Text} from "react-native";
-import {SafeAreaView} from "react-native-safe-area-context";
+import {SafeAreaProvider} from "react-native-safe-area-context";
 import apiClient from "../../api/apiClient";
 import {HOST} from "../../constants/system";
 import EmployeeCard from "./EmployeeCard";
@@ -38,13 +38,13 @@ export default function ListEmployeesScreen() {
     },[])
 
     return (
-        <SafeAreaView>
+        <SafeAreaProvider>
 
             {
                 isLoading ? <ActivityIndicator/> : dataIsLoaded ?
                    <EmployeeCard employees={employees}/>
                     : errorGettingInformation ? <Text>Error</Text> : <Text>Stale</Text>
             }
-        </SafeAreaView>
+        </SafeAreaProvider>
     )
 }
